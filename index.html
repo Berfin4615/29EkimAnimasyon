@@ -6,14 +6,22 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="video-overlay" id="videoOverlay">
+        <video id="introVideo" playsinline>
+            <source src="images/intro.mp4" type="video/mp4">
+        </video>
+        <button id="playBtn">▶ Başlat</button>
+    </div>
+    <div class="container" id="mainContent">
         <img src="images/TürkBayrağı.gif" alt="Background" class="background">
         <div class="Atatürk-container">
             <img src="images/Atatürk.png" alt="Atatürk" class="Atatürk">
-            <h1 class="cumhuriyet">Cumhuriyetimizin</h1>
-            <h1 class="yıl"> 102. yılı </h1>
-            <h1 class="kutlu"> kutlu olsun!</h1>
+            <h1 class="cumhuriyet hidden">Cumhuriyetimizin</h1>
+            <h1 class="yıl hidden">102. yılı</h1>
+            <h1 class="kutlu hidden">kutlu olsun!</h1>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

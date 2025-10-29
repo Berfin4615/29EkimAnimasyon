@@ -1,95 +1,233 @@
 body {
-  margin: 0;
-  background-color: #000;
-  color: #fff;
-  font-family: monospace;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  overflow: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .container {
-  text-align: center;
-  animation: fadeIn 2s ease-in-out forwards;
+    text-align: center;
+    position: relative;
 }
 
-.console {
-  font-size: 18px;
-  color: #ff4c4c;
-  animation: blink 1s steps(1) infinite;
+.atatürk-container {
+    position: relative;
+    animation: fadeIn 2s ease-in forwards;
 }
 
-.ataturk {
-  width: 100px;
-  height: 120px;
-  margin: 20px auto;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Ataturk_signature.png/320px-Ataturk_signature.png') no-repeat center;
-  background-size: contain;
-  opacity: 0;
-  animation: fadeInImage 2s ease-in 1s forwards;
+.atatürk {
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
 }
 
-.flag {
-  width: 120px;
-  height: 80px;
-  margin: 20px auto;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/320px-Flag_of_Turkey.svg.png') no-repeat center;
-  background-size: cover;
-  animation: wave 1s infinite ease-in-out;
-  opacity: 0;
-  animation-delay: 2.5s;
-  animation-fill-mode: forwards;
+.cumhuriyet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    color: red;
+    border-right: 2px solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typewriter 4s steps(10) 2s forwards, blink 0.6s step-end infinite;
+    opacity: 0;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
 }
 
-.line {
-  font-size: 16px;
-  margin: 10px 0;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards;
-}
-.line:nth-of-type(3) { animation-delay: 3.5s; }
-.line:nth-of-type(4) { animation-delay: 4.2s; }
-
-.headline {
-  font-size: 20px;
-  font-weight: bold;
-  color: #ffd700;
-  margin-top: 30px;
-  opacity: 0;
-  animation: popIn 1.2s ease-in-out 5.5s forwards;
+.letter-image {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 200px;
+	height: 200px;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	cursor: pointer;
 }
 
-.footer {
-  font-size: 12px;
-  color: #888;
-  margin-top: 40px;
-  opacity: 0;
-  animation: fadeIn 1s ease-in 7s forwards;
+.animated-mail {
+	position: absolute;
+	height: 150px;
+	width: 200px;
+	-webkit-transition: .4s;
+	-moz-transition: .4s;
+	transition: .4s;
+	
+	.body {
+		position: absolute;
+		bottom: 0;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 0 100px 200px;
+		border-color: transparent transparent #e95f55 transparent;
+		z-index: 2;
+	}
+	
+	.top-fold {
+		position: absolute;
+		top: 50px;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 50px 100px 0 100px;
+		-webkit-transform-origin: 50% 0%;
+		-webkit-transition: transform .4s .4s, z-index .2s .4s;
+		-moz-transform-origin: 50% 0%;
+		-moz-transition: transform .4s .4s, z-index .2s .4s;
+		transform-origin: 50% 0%;
+		transition: transform .4s .4s, z-index .2s .4s;
+		border-color: #cf4a43 transparent transparent transparent;
+		z-index: 2;
+	}
+	
+	.back-fold {
+		position: absolute;
+		bottom: 0;
+		width: 200px;
+		height: 100px;
+		background: #cf4a43;
+		z-index: 0;
+	}
+	
+	.left-fold {
+		position: absolute;
+		bottom: 0;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 50px 0 50px 100px;
+		border-color: transparent transparent transparent #e15349;
+		z-index: 2;
+	}
+	
+	.letter {
+		left: 20px;
+		bottom: 0px;
+		position: absolute;
+		width: 160px;
+		height: 60px;
+		background: white;
+		z-index: 1;
+		overflow: hidden;
+		-webkit-transition: .4s .2s;
+		-moz-transition: .4s .2s;
+		transition: .4s .2s;
+		
+		.letter-border {
+			height: 10px;
+			width: 100%;
+      background: repeating-linear-gradient(
+        -45deg,
+        #cb5a5e,
+        #cb5a5e 8px,
+        transparent 8px,
+        transparent 18px
+      );
+		}
+		
+		.letter-title {
+			margin-top: 10px;
+			margin-left: 5px;
+			height: 10px;
+			width: 40%;
+			background: #cb5a5e;
+		}
+		.letter-context {
+			margin-top: 10px;
+			margin-left: 5px;
+			height: 10px;
+			width: 20%;
+			background: #cb5a5e;
+		}
+		
+		.letter-stamp {
+			margin-top: 30px;
+			margin-left: 120px;
+			border-radius: 100%;
+			height: 30px;
+			width: 30px;
+			background: #cb5a5e;
+			opacity: 0.3;
+		}
+	}
 }
+
+.shadow {
+	position: absolute;
+	top: 200px;
+	left: 50%;
+	width: 400px;
+	height: 30px;
+	transition: .4s;
+	transform: translateX(-50%);
+	-webkit-transition: .4s;
+	-webkit-transform: translateX(-50%);
+	-moz-transition: .4s;
+	-moz-transform: translateX(-50%);
+	
+	border-radius: 100%;
+	background: radial-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.0), rgba(0,0,0,0.0));
+}
+
+	.letter-image:hover {
+		.animated-mail {
+			transform: translateY(50px);
+			-webkit-transform: translateY(50px);
+			-moz-transform: translateY(50px);
+		}
+		
+		.animated-mail .top-fold {
+			transition: transform .4s, z-index .2s;
+			transform: rotateX(180deg);
+			-webkit-transition: transform .4s, z-index .2s;
+			-webkit-transform: rotateX(180deg);
+			-moz-transition: transform .4s, z-index .2s;
+			-moz-transform: rotateX(180deg);
+			z-index: 0;
+		}
+		
+		.animated-mail .letter {
+			height: 180px;
+		}
+		
+		.shadow {
+			width: 250px;
+		}
+	}
 
 /* Animasyonlar */
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+    to {
+        opacity: 1;
+    }
 }
 
-@keyframes fadeInImage {
-  to { opacity: 1; }
+@keyframes typewriter {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 14ch;
+        opacity: 1;
+    }
 }
 
-@keyframes wave {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(3deg); }
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
 }
 
-@keyframes popIn {
-  0% { transform: scale(0.7); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}

@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.console {
+  font-size: 18px;
+  color: #ff4c4c;
+  animation: blink 1s steps(1) infinite;
+}
+
+.ataturk {
+  width: 100px;
+  height: 120px;
+  margin: 20px auto;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Ataturk_signature.png/320px-Ataturk_signature.png') no-repeat center;
+  background-size: contain;
+  opacity: 0;
+  animation: fadeInImage 2s ease-in 1s forwards;
+}
+
+.flag {
+  width: 120px;
+  height: 80px;
+  margin: 20px auto;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Flag_of_Turkey.svg/320px-Flag_of_Turkey.svg.png') no-repeat center;
+  background-size: cover;
+  animation: wave 1s infinite ease-in-out;
+  opacity: 0;
+  animation-delay: 2.5s;
+  animation-fill-mode: forwards;
+}
+
+.line {
+  font-size: 16px;
+  margin: 10px 0;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+.line:nth-of-type(3) { animation-delay: 3.5s; }
+.line:nth-of-type(4) { animation-delay: 4.2s; }
+
+.headline {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffd700;
+  margin-top: 30px;
+  opacity: 0;
+  animation: popIn 1.2s ease-in-out 5.5s forwards;
+}
+
+.footer {
+  font-size: 12px;
+  color: #888;
+  margin-top: 40px;
+  opacity: 0;
+  animation: fadeIn 1s ease-in 7s forwards;
+}
+
+/* Animasyonlar */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInImage {
+  to { opacity: 1; }
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

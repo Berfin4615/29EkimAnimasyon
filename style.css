@@ -231,3 +231,49 @@ body {
     }
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 800px;
+  color: #eee;
+  position: relative;
+}
+
+.atatürk-video {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.mektup-metni p {
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #eee;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  color: #f55;
+  cursor: pointer;
+}

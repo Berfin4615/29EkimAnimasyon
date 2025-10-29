@@ -6,28 +6,62 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="atatürk-container">
-      <img src="images/Atatürk2.png" alt="Atatürk" class="atatürk">
-      <h1 class="cumhuriyet">Cumhuriyet</h1>
-    </div>
-    <div class="letter-image">
-        <div class="animated-mail">
-            <div class="back-fold"></div>
-            <div class="letter">
-                <div class="letter-border"></div>
-                <div class="letter-title"></div>
-                <div class="letter-context"></div>
-                <div class="letter-stamp">
-                    <div class="letter-stamp-inner"></div>
-                </div>
-            </div>
-            <div class="top-fold"></div>
-            <div class="body"></div>
-            <div class="left-fold"></div>
+    <div class="container">
+        <div class="atatürk-container">
+        <img src="images/Atatürk2.png" alt="Atatürk" class="atatürk">
+        <h1 class="cumhuriyet">Cumhuriyet</h1>
         </div>
-        <div class="shadow"></div>
+        <div class="letter-image">
+            <div class="animated-mail">
+                <div class="back-fold"></div>
+                <div class="letter">
+                    <div class="letter-border"></div>
+                    <div class="letter-title"></div>
+                    <div class="letter-context"></div>
+                    <div class="letter-stamp">
+                        <div class="letter-stamp-inner"></div>
+                    </div>
+                </div>
+                <div class="top-fold"></div>
+                <div class="body"></div>
+                <div class="left-fold"></div>
+            </div>
+            <div class="shadow"></div>
+        </div>
     </div>
-  </div>
+    <div class="modal" id="mektupModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            
+            <video controls autoplay class="atatürk-video">
+            <source src="video/ataturk_hitabe.mp4" type="video/mp4">
+            Tarayıcınız video etiketini desteklemiyor.
+            </video>
+
+            <div class="mektup-metni">
+            <p>Sevgili Türk milleti,</p>
+            <p>
+                Cumhuriyetimizin 102. yılında, milletimizin aklı, bilimi ve kalbiyle yükseldiğini görmek beni sonsuz gururlandırırdı.  
+                Eğer bugün yaşasaydım, size demek isterdim ki: “En büyük savaş cehalete karşıdır.”
+            </p>
+            <p>
+                Geleceğinizi kodlayan gençler olarak, her satırda özgürlüğü, her projede halkın gücünü hatırlayın.
+            </p>
+            <p>— Gazi Mustafa Kemal Atatürk</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+<script>
+  const letter = document.querySelector('.letter-image');
+  const modal = document.getElementById('mektupModal');
+
+  letter.addEventListener('click', () => {
+    modal.style.display = 'flex';
+  });
+
+  function closeModal() {
+    modal.style.display = 'none';
+  }
+</script>
